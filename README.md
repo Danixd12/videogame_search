@@ -26,3 +26,30 @@ Ejemplo del JSON:
 }
 
 ```
+
+## getParameter()
+
+* Esta función nos retorna un valor específico de nuestro json que previamente contiene los datos del viedojuego.
+
+Ejemplo:
+
+```js
+const v_api = require('videogame_search')
+
+console.log(v_api.getpParameter("games.json", "Minecraft", "ventas"))
+```
+
+Siendo el primer argumento la ruta de nuestro JSON. Y siendo el segundo el nombre de nuestro videojuego, el tercero el nombre de nuestro valor.
+***
+
+Ejemplo del JSON:
+
+```json
+{
+    "Minecraft": {
+        "name": "Minecraft",
+        "ventas": "7.000.000"
+    }
+}
+
+```

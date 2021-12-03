@@ -26,12 +26,12 @@ module.exports = {
     */
      getParameter(jsonName, nombre, parametro) {
 
-        const json = require(`./${jsonName}`)
+        const json = require(`../../${jsonName}`)
 
         if (!parametro) {
 
             return "Parametro no dado.";
-            
+
         } else {
 
             var parsed = json[nombre][parametro]
