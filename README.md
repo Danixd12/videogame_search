@@ -63,7 +63,7 @@ Ejemplo:
 ```js
 const v_api = require('videogame_search')
 
-console.log(v_api.addValue("games.json", "Minecraft", {valor1: "valor1", valor2: "valor2"}))
+console.log(v_api.addGame("games.json", "Minecraft", {valor1: "valor1", valor2: "valor2"}))
 ```
 
 Siendo el primer argumento la ruta de nuestro JSON. Y siendo el segundo el nombre de nuestro videojuego, el tercero nuestros valores.

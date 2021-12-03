@@ -7,6 +7,12 @@ module.exports = {
     * Retorna nuestros valores del JSON dado
     * @param {jsonName} jsonRoute
     * @param {jsonObject} jsonObject
+    * 
+    * * Ejemplo: 
+    * 
+    * ```
+    * console.log(data.getData("test/games.json", "GTA"))
+    * ```
     */
     getData(jsonName, nombre) {
 
@@ -22,9 +28,15 @@ module.exports = {
 
     /** *
     * Retorna valor especifico del JSON dado
-    * @param {jsonName} - jsonRoute
-    * @param {jsonObject} - jsonObject
-    * @param {searchParam} - searchParam
+    * @param {jsonName} jsonRoute
+    * @param {jsonObject} jsonObject
+    * @param {searchParam} searchParam
+    * 
+    * * Ejemplo:
+    * 
+    * ```
+    * console.log(data.getParameter("test/games.json", "Minecraft", "ventas"))
+    * ```
     */
     getParameter(jsonName, nombre, parametro) {
 
@@ -44,10 +56,16 @@ module.exports = {
     },
 
     /** *
-    * Añade un juego al JSON
-    * @param {jsonName} - jsonRoute
-    * @param {value} - game name
-    * @param {jsonObject} - jsonObject
+    * Añade un juego al JSON y modifica uno ya existente
+    * @param {jsonName} jsonRoute
+    * @param {value} gameName
+    * @param {jsonObject} jsonObject
+    * 
+    * * Ejemplo: 
+    * 
+    * ```
+    * console.log(data.addGame("games.json", "GTA",{test: "test", valor: 5} ))
+    * ```
     */
     addGame(jsonName, nombre, valor) {
 
