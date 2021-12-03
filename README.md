@@ -36,7 +36,7 @@ Ejemplo:
 ```js
 const v_api = require('videogame_search')
 
-console.log(v_api.getpParameter("games.json", "Minecraft", "ventas"))
+console.log(v_api.getParameter("games.json", "Minecraft", "ventas"))
 ```
 
 Siendo el primer argumento la ruta de nuestro JSON. Y siendo el segundo el nombre de nuestro videojuego, el tercero el nombre de nuestro valor.

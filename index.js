@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 
 module.exports = {
 
@@ -8,23 +10,23 @@ module.exports = {
     */
     getData(jsonName, nombre) {
 
-        const json = require(`../../${jsonName}`)
+        const json = require(`./${jsonName}`)
 
-        var parsed = json[nombre]
-        
-        for (key in parsed) {
-            console.log(parsed[key])
+        var pa = json[nombre]
+
+        for (key in pa) {
+            console.log(pa[key])
         }
-            return "--------------------------------";
+        return "--------------------------------";
     },
 
     /** *
     * Retorna valor especifico del JSON dado
     * @param {jsonName} - jsonRoute
     * @param {jsonObject} - jsonObject
-    * @param {param} - searchParam
+    * @param {searchParam} - searchParam
     */
-     getParameter(jsonName, nombre, parametro) {
+    getParameter(jsonName, nombre, parametro) {
 
         const json = require(`../../${jsonName}`)
 
@@ -34,13 +36,37 @@ module.exports = {
 
         } else {
 
-            var parsed = json[nombre][parametro]
+            var pa = json[nombre][parametro]
 
-            return parsed;
+            return pa;
         }
-           
-    }
 
-}
+    },
 
-//TODO: MORE FUNCTIONS AS PARSEDATA OR GETDATAPERSTRING
+    /** *
+    * Añade un juego al JSON
+    * @param {jsonName} - jsonRoute
+    * @param {jsonObject} - jsonObject
+    */
+   /* addValue(jsonName, objeto) {
+
+        const json = require(`./${jsonName}`)
+
+            fs.readFile(json, 'utf-8', function readFileCallback(err, data) {
+                if (err) {
+                    return err;
+
+                } else {
+                    obj = JSON.parse(data);
+
+                    obj.table.push({ objeto });
+                    json = JSON.stringify(obj);
+
+                    fs.writeFile(jsonName, json, 'utf-8', callback);
+
+                }
+            }
+        }  */ 
+    }     
+        
+    
