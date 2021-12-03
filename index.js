@@ -10,7 +10,7 @@ module.exports = {
     */
     getData(jsonName, nombre) {
 
-        const json = require(`./${jsonName}`)
+        const json = require(`../../${jsonName}`)
 
         var pa = json[nombre]
 
@@ -46,27 +46,30 @@ module.exports = {
     /** *
     * Añade un juego al JSON
     * @param {jsonName} - jsonRoute
+    * @param {value} - game name
     * @param {jsonObject} - jsonObject
     */
-   /* addValue(jsonName, objeto) {
+    addGame(jsonName, nombre, valor) {
 
-        const json = require(`./${jsonName}`)
+        //const json = require(`./${jsonName}`)
 
-            fs.readFile(json, 'utf-8', function readFileCallback(err, data) {
-                if (err) {
-                    return err;
+        fs.readFile(jsonName, 'utf-8', function readFileCallback(err, data) {
+            if (err) {
+                return err;
 
-                } else {
-                    obj = JSON.parse(data);
+            } else {
+                obj = JSON.parse(data);
 
-                    obj.table.push({ objeto });
-                    json = JSON.stringify(obj);
+                obj[nombre] = ({ valor });
+                json = JSON.stringify(obj, null, 4);
 
-                    fs.writeFile(jsonName, json, 'utf-8', callback);
+                fs.writeFile(jsonName, json, 'utf-8', function callback() { });
 
-                }
             }
-        }  */ 
-    }     
-        
-    
+            console.log("Listo!")
+
+        });
+    }
+}
+
+
