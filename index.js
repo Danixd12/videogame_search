@@ -1,9 +1,11 @@
 
-
-// console.log(parsed.ventas)
-
 module.exports = {
 
+    /** *
+    * Retorna nuestros valores del JSON dado
+    * @param {jsonName} jsonRoute
+    * @param {jsonObject} jsonObject
+    */
     getData(jsonName, nombre) {
 
         const json = require(`../../${jsonName}`)
